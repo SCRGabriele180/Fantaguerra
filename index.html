@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantaguerra</title>
+    <link rel="preconnect" href="https://fonts.googlweapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+    <!-- Schermata Home -->
+    <div id="home-screen" class="screen active">
+        <div class="video-background-overlay"></div>
+        <div class="home-content">
+            <h1 class="game-title">FANTAGUERRA</h1>
+            <p class="game-subtitle">Il Dominio Inizia Qui</p>
+
+            <div class="menu-container glass-panel">
+                <h2>Nuova Partita</h2>
+                
+                <div class="settings-group">
+                    <label>Scegli la Mappa</label>
+                    <div class="map-selector" id="map-selector">
+                        <div class="map-option selected" data-map="desert">
+                            <div class="map-thumbnail desert-thumb"></div>
+                            <span>Oasi di Sabbia</span>
+                        </div>
+                        <div class="map-option" data-map="forest">
+                            <div class="map-thumbnail forest-thumb"></div>
+                            <span>Foresta Oscura</span>
+                        </div>
+                        <div class="map-option" data-map="island">
+                            <div class="map-thumbnail island-thumb"></div>
+                            <span>Arcipelago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <label>Difficoltà IA</label>
+                    <select id="ai-difficulty" class="styled-select">
+                        <option value="easy">Facile</option>
+                        <option value="medium" selected>Normale</option>
+                        <option value="hard">Difficile</option>
+                    </select>
+                </div>
+
+                <button id="start-btn" class="btn-primary">AVVIA BATTAGLIA</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schermata di Gioco Principale -->
+    <div id="game-screen" class="screen hidden">
+        <!-- HUD Superiore -->
+        <header class="hud-top glass-panel">
+            <div class="resources">
+                <div class="resource-item" title="Monete">
+                    <span class="icon">💰</span> <span id="coin-count">500</span>
+                </div>
+                <div class="resource-item" title="Cibo">
+                    <span class="icon">🍖</span> <span id="food-count">100</span>
+                </div>
+                <div class="resource-item" title="Truppe (Capacità)">
+                    <span class="icon">👥</span> <span id="troop-count">0/20</span>
+                </div>
+            </div>
+            <div class="game-info">
+                <span id="current-map-name">Oasi di Sabbia</span> - <span id="game-time">00:00</span>
+            </div>
+            <div class="actions">
+                <button id="menu-btn" class="btn-secondary">Menu</button>
+            </div>
+        </header>
+
+        <!-- Area della Mappa -->
+        <main class="game-map-container" id="game-map-container">
+            <div class="game-map" id="game-map">
+                <!-- Griglia della mappa generata via JS -->
+            </div>
+        </main>
+
+        <!-- HUD Inferiore (Carte e Costruzioni) -->
+        <footer class="hud-bottom glass-panel">
+            <div class="deck-tabs">
+                <button class="tab-btn active" data-tab="soldati">Soldati</button>
+                <button class="tab-btn" data-tab="mezzi">Mezzi</button>
+                <button class="tab-btn" data-tab="leader">Leader</button>
+            </div>
+            
+            <div class="cards-container" id="cards-container">
+                <!-- Le carte verranno iniettate qui via JS -->
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modale Menu -->
+    <div id="pause-menu" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <h2>Pausa</h2>
+            <button id="resume-btn" class="btn-primary">Riprendi</button>
+            <button id="quit-btn" class="btn-danger">Abbandona Partita</button>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
