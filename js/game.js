@@ -55,6 +55,11 @@ const GameEngine = {
         GameState.animationFrameId = requestAnimationFrame((t) => this.renderLoop(t));
     },
 
+    renderLoop: function(t) {
+        // Per futuri effetti visivi continui
+        GameState.animationFrameId = requestAnimationFrame((t) => this.renderLoop(t));
+    },
+
     startBattle: function() {
         if(GameState.player.entities.length === 0) {
             alert("Devi schierare almeno un soldato prima di iniziare!");

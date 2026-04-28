@@ -64,14 +64,27 @@
                 <div class="resource-item" title="Cibo">
                     <span class="icon">🍖</span> <span id="food-count">100</span>
                 </div>
+                <div class="resource-item" title="Kit Medici">
+                    <span class="icon">🚑</span> <span id="meds-count">5</span>
+                </div>
                 <div class="resource-item" title="Truppe (Capacità)">
                     <span class="icon">👥</span> <span id="troop-count">0/20</span>
                 </div>
             </div>
             <div class="game-info">
-                <span id="current-map-name">Oasi di Sabbia</span> - <span id="game-time">00:00</span>
+                <div id="game-info-timer" style="display:none;">
+                    <span id="current-map-name">Oasi di Sabbia</span> - <span id="game-time">00:00</span>
+                </div>
+                <div id="deployment-controls" style="display:flex;">
+                    <button id="start-battle-btn" class="btn-primary">Inizia Battaglia</button>
+                </div>
             </div>
-            <div class="actions">
+            <div class="actions" style="display:flex; align-items:center; gap:10px;">
+                <button id="squad-create-btn" class="btn-secondary" style="display:none;">Crea Squadra</button>
+                <div id="squad-mode-indicator" style="display:none; align-items:center; gap:5px; font-size:12px;">
+                    <span>Seleziona unità</span>
+                    <button id="squad-save-btn" class="btn-primary" style="padding: 5px 10px; font-size:12px;">Salva</button>
+                </div>
                 <button id="menu-btn" class="btn-secondary">Menu</button>
             </div>
         </header>
