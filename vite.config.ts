@@ -14,4 +14,7 @@ export default defineConfig({
     ssr: false,
     server: { entry: "server" },
   },
+  client: {
+    input: "./src/main.tsx",
+  },
 });
