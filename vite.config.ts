@@ -14,5 +14,13 @@ export default defineConfig({
   build: {
     outDir: 'dist/client',
     emptyOutDir: true,
+  },
+  css: {
+    postcss: {
+      plugins: [
+        require('tailwindcss'),
+        require('autoprefixer'),
+      ],
+    },
   }
 })
