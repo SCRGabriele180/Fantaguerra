@@ -11,7 +11,7 @@ export default defineConfig({
     base: githubPagesBase,
   },
   tanstackStart: {
-    ssr: false, // <-- AGGIUNGI QUESTA RIGA: Disabilita il server per creare una SPA statica
+    ssr: true, // <-- AGGIUNGI QUESTA RIGA: Disabilita il server per creare una SPA statica
     server: { entry: "server" },
   },
 });
